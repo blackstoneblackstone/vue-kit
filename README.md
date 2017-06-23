@@ -1,13 +1,13 @@
-#vue+jade+stylus KIT脚手架
+# vue+jade+stylus KIT脚手架
 node <6.0 && npm > 5.0
 
-第一步 安装依赖
+## 第一步 安装依赖
 npm run update
 
-第二步 复制配置文件
+## 第二步 复制配置文件
 修改配置文件 config.js
 
-第三步 启动项目
+## 第三步 启动项目
 前端环境：npm run dev
 
 浏览器： localhost:端口号 (默认80) //端口可以在app.js中修改
@@ -15,7 +15,7 @@ npm run update
 npm run update
 
 
-##可能遇到的问题
+## 可能遇到的问题
 
 1. uglifyjs版本更新问题 
 
@@ -42,7 +42,8 @@ var PluginError = gutil.PluginError;
 ```
 
 2.browser-sync 用于自动刷新页面，如果不需要可以在config.js中将
-```json
+
+```javascript
 browserSync：{
    isUse:false
 }

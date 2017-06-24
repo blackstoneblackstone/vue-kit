@@ -1,7 +1,9 @@
 <template lang="jade">
+  .banner.row
+    img(src="../../img/banner.png")
+
 </template>
 <script>
-  import zz from ''
 
   export default {
     data: function () {
@@ -15,5 +17,7 @@
   }
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
+  img
+    margin-top -10px
 </style>

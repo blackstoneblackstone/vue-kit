@@ -2,7 +2,7 @@
 
 module.exports = {
   output: {
-    publicPath: '/new/'
+    publicPath: '/'
   },
   devtool: 'source-map'
 }

@@ -40,8 +40,8 @@ Object.keys(proxyTable).forEach(function (context) {
   app.use(proxy(context, options))
 })
 
+app.use('/', express.static(config.app.output))
 
-// index for oldlearning
 app.use('/', function (req, res) {
   var indexHtml = fs.readFileSync(config.app.output + '/index.html')
   res.header('Content-Type', 'text/html')

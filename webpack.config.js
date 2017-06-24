@@ -31,7 +31,7 @@ var common = {
       test: /\.css$/,
       loader: 'css-loader'
     }, {
-      test: /\.(png|jpg|gif|svg)$/,
+      test: /\.(png|jpg|gif|svg|woff|eot|ttf)$/,
       loader: 'file-loader?name=[path][name]-[hash].[ext]'
     }, {
       test: /\.html$/,

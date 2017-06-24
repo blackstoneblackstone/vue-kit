@@ -1,5 +1,3 @@
-import './assets/cssreset-min.css'
-
 import Vue from 'vue'
 import app from './app.vue'
 import VueRouter from 'vue-router'
@@ -14,6 +12,7 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
+  console.log(to);
   if (to.matched) {
     for (let route of routes) {
       if (to.matched[0].path === route.path) {

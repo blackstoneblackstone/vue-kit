@@ -24,11 +24,22 @@
     min-width: 1200px
     min-height: 720px
     font-family: "Lantinghei SC, Open Sans, Arial, Hiragino Sans GB, Microsoft YaHei, \\5FAE\8F6F\96C5\9ED1, STHeiti, WenQuanYi Micro Hei, SimSun, sans-serif"
-    font-weight: 300
+    font-weight: bold
 
 
   ul,li
     list-style none
     padding 0
+
+  li
+    animation-name zoomIn
+    animation-duration 1s
+
+  @keyframes zoomIn
+    0%
+      opacity 0
+      transform scale3d(.3, .3, .3)
+    50%
+      opacity 1
 
 </style>

@@ -30,16 +30,14 @@
         ]
       }
     },
-    components: {},
-    computed: {},
-    mounted () {
-    },
-    methods: {},
   }
 </script>
 
 <style lang="stylus">
   .header
+    position fixed
+    z-index 100
+    width 100%
     height 50px
     background-color #5dc65f
     color #ffffff
@@ -68,7 +66,7 @@
     margin-top: 10px;
     line-height: 30px;
     &:hover
-      background-color rgba(255, 255, 255, 0.3)
+      background-color rgba(255, 255, 255, 0.2)
   .tool
     li
       cursor pointer

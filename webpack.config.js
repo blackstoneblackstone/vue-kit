@@ -3,7 +3,6 @@ const path = require('path')
 const config = require('./config.js').app
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-
 var common = {
   entry: {
     main: config.jsentry,
@@ -12,6 +11,7 @@ var common = {
       'vue-router',
       'axios',
       'form-urlencoded',
+      './src/lib/polyfill.min.js',
     ]
   },
   output: {

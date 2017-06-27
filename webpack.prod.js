@@ -4,8 +4,6 @@ const path = require('path')
 const config = require('./config.js')
 const webpack = require('webpack')
 const QiniuPlugin = require('qn-webpack')
-
-const learning_config = config.learning
 const cdn_config = config.cdn
 
 module.exports = qiniuPlugin(cdn_config)

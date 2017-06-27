@@ -21,11 +21,6 @@
     data: function () {
       return {}
     },
-    components: {},
-    computed: {},
-    mounted () {
-    },
-    methods: {},
   }
 </script>
 

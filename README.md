@@ -1,4 +1,5 @@
-# website-fangshan
+# IFS web pc
+>爱房山pc页面
 node <6.0 && npm > 5.0
 
 ## 第一步 安装依赖

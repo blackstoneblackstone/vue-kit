@@ -1,22 +1,22 @@
 <template lang="jade">
-  .want
+  .want.row
     .w-title
       |我要
     ul.row.w-conn
       li.col-lg-3.col-md-3.gray
-        img(src="../img/zixun_bg.png")
+        img(src="../../img/zixun_bg.png")
         br
         | 咨询
       li.col-lg-3.col-md-3.gray
-        img(src="../img/jianyi_bg.png")
+        img(src="../../img/jianyi_bg.png")
         br
         | 建议
       li.col-lg-3.col-md-3.gray
-        img(src="../img/tousu_bg.png")
+        img(src="../../img/tousu_bg.png")
         br
         | 投诉
       li.col-lg-3.col-md-3.gray
-        img(src="../img/jindu_bg.png")
+        img(src="../../img/jindu_bg.png")
         br
         | 查询办事进度
 </template>
@@ -28,11 +28,6 @@
 
       }
     },
-    components: {},
-    computed: {},
-    mounted () {
-    },
-    methods: {},
   }
 </script>
 
@@ -40,11 +35,11 @@
   .want
     position absolute
     text-align center
-    width 60%
-    margin-left 20%
+    width 75%
+    margin-left 13.5%
     height 200px
     margin-top -90px
-    background url("../img/want_bg.png") no-repeat
+    background url("../../img/want_bg.png") no-repeat
     background-size 100% 100%
     .w-title
       height 70px
@@ -54,7 +49,7 @@
       height 150px
       vertical-align middle
       li
-        background url("../img/want_btn_bg.png") no-repeat center
+        background url("../../img/want_btn_bg.png") no-repeat center
         height 100px
         padding 20px
         background-size 60% auto

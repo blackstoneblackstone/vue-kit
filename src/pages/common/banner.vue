@@ -9,15 +9,12 @@
     data: function () {
       return {}
     },
-    components: {},
-    computed: {},
-    mounted () {
-    },
-    methods: {},
   }
 </script>
 
 <style lang="stylus" scoped>
   img
-    margin-top -10px
+    margin-top 50px
+    width 100%
+
 </style>

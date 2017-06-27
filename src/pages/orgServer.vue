@@ -1,156 +1,144 @@
 <template lang="jade">
-  .life-server
-    .l-pay.row
-      .lp-title 生活缴费
+  .Red-server
+    .l-People.row
+      .lp-title 民政局
       ul
-        li.col-lg-3.col-md-3(v-for="lPay in lPays")
+        li.col-lg-3.col-md-3(v-for="lPeople in lPeoples")
           .icon
-            img(:src="lPay.icon")
+            img(:src="lPeople.icon")
           .lpl-title
-            | {{lPay.name}}
-    .l-driver.row
-      .lp-title 出行服务
+            | {{lPeople.name}}
+    .l-Police.row
+      .lp-title 公安局
       ul
-        li.col-lg-4.col-md-4(v-for="lDriver in lDrivers")
-          .icon
-            img(:src="lDriver.icon")
-          .lpl-title
-            | {{lDriver.name}}
-    .l-money.row
-      .lp-title  金融理财
+        li(v-for="lPolice in lPolices",:class="'col-lg-'+12/(lPolices.length)+' col-md-'+12/lPolices.length")
+          .lp-con
+            .icon
+              img(:src="lPolice.icon")
+            .lpl-title
+              | {{lPolice.name}}
+            .lpl-desc
+              | {{lPolice.desc}}
+    .l-Child.row
+      .lp-title  卫计委
       ul.top
-        li.col-lg-4.col-md-4(v-for="lMoneyTop in lMoneys.top")
+        li.col-lg-6.col-md-6(v-for="lChildTop in lChilds.top")
           .icon
-            img(:src="lMoneyTop.icon")
+            img(:src="lChildTop.icon")
           .lpl-title
-            | {{lMoneyTop.name}}
+            | {{lChildTop.name}}
       ul.bottom
-        li.col-lg-3.col-md-3(v-for="lMoneyBottom in lMoneys.bottom")
+        li.col-lg-4.col-md-4(v-for="lChildBottom in lChilds.bottom")
           .icon
-            img(:src="lMoneyBottom.icon")
+            img(:src="lChildBottom.icon")
           .lpl-title
-            | {{lMoneyBottom.name}}
+            | {{lChildBottom.name}}
     .l-l.row
-      .lp-title 生活服务
+      .lp-title 红十字会
       ul
-        li.col-lg-3.col-md-3(v-for="lLife in lLifes")
-          .icon
-            img(:src="lLife.icon")
-          .title
-            | {{lLife.name}}
-    .l-heath.row
-      .lp-title 养生
+        template(v-for="(lRed,index) in lReds")
+          li.col-lg-6.col-md-6(v-if="index==2||index==3")
+            .title.col-lg-6.col-md-6
+              .lpt-name
+                | {{lRed.name}}
+              .lpt-desc
+                | {{lRed.desc}}
+            .icon.col-lg-6.col-md-6
+              img(:src="lRed.icon")
+          li.col-lg-6.col-md-6(v-if="index!=2&&index!=3")
+            .icon.col-lg-6.col-md-6
+              img(:src="lRed.icon")
+            .title.col-lg-6.col-md-6
+              .lpt-name
+                | {{lRed.name}}
+              .lpt-desc
+                | {{lRed.desc}}
+    .l-Traffic.row
+      .lp-title 交通局
       ul
-        li.col-lg-4.col-md-4(v-for="lHeath in lHeaths")
+        li.col-lg-6.col-md-6(v-for="lTraffic in lTraffics")
           .icon
-            img(:src="lHeath.icon")
-            | {{lHeath.name}}
+            img(:src="lTraffic.icon")
+            | {{lTraffic.name}}
 
 
 </template>
 <script>
-  let lPayIcons = [require("../img/l_pay_0.png"),
-    require("../img/l_pay_1.png"),
-    require("../img/l_pay_2.png"),
-    require("../img/l_pay_3.png"),
+  let lPeopleIcons = [
+    require("../img/icon_p_0.png"),
+    require("../img/icon_p_1.png"),
+    require("../img/icon_p_2.png"),
+    require("../img/icon_p_3.png"),
   ];
-  let lDriverIcons = [
-    require("../img/icon_d_0.png"),
-    require("../img/icon_d_1.png"),
-    require("../img/icon_d_2.png"),
-    require("../img/icon_d_3.png"),
-    require("../img/icon_d_4.png"),
-    require("../img/icon_d_5.png"),
-    require("../img/icon_d_6.png"),
-    require("../img/icon_d_7.png"),
-    require("../img/icon_d_8.png"),
+  let lPoliceIcons = [
+    require("../img/icon_police_0.png"),
+    require("../img/icon_police_1.png"),
   ];
-  let lMoneyIcons = [
-    require("../img/icon_m_0.png"),
-    require("../img/icon_m_1.png"),
-    require("../img/icon_m_2.png"),
-    require("../img/icon_m_3.png"),
-    require("../img/icon_m_4.png"),
-    require("../img/icon_m_5.png"),
-    require("../img/icon_m_6.png"),
+  let lChildIcons = [
+    require("../img/icon_w_0.png"),
+    require("../img/icon_w_1.png"),
+    require("../img/icon_w_2.png"),
+    require("../img/icon_w_3.png"),
+    require("../img/icon_w_4.png"),
   ];
-  let lLifeIcons = [
-    require("../img/icon_l_0.png"),
-    require("../img/icon_l_1.png"),
-    require("../img/icon_l_2.png"),
-    require("../img/icon_l_3.png"),
-    require("../img/icon_l_4.png"),
-    require("../img/icon_l_5.png"),
-    require("../img/icon_l_6.png"),
-    require("../img/icon_l_7.png"),
+  let lRedIcons = [
+    require("../img/icon_s_0.png"),
+    require("../img/icon_s_1.png"),
+    require("../img/icon_s_2.png"),
+    require("../img/icon_s_3.png"),
+    require("../img/icon_s_4.png"),
+    require("../img/icon_s_5.png"),
   ];
-  let lHeathIcons = [
-    require("../img/icon_he_0.png"),
-    require("../img/icon_he_1.png"),
-    require("../img/icon_he_2.png"),
+  let lTrafficIcons = [
+    require("../img/icon_j_0.png"),
+    require("../img/icon_j_1.png"),
   ];
   export default {
     data: function () {
       return {
-        lPays: [
-          {name: "水费缴纳", link: "#", icon: lPayIcons[0]},
-          {name: "电费缴纳", link: "#", icon: lPayIcons[1]},
-          {name: "供暖费缴纳", link: "#", icon: lPayIcons[2]},
-          {name: "燃气费缴纳", link: "#", icon: lPayIcons[3]},
+        lPeoples: [
+          {name: "水费缴纳", link: "#", icon: lPeopleIcons[0]},
+          {name: "电费缴纳", link: "#", icon: lPeopleIcons[1]},
+          {name: "供暖费缴纳", link: "#", icon: lPeopleIcons[2]},
+          {name: "燃气费缴纳", link: "#", icon: lPeopleIcons[3]},
         ],
-        lDrivers: [
-          {name: "长途汽车", link: "#", icon: lDriverIcons[0]},
-          {name: "航班", link: "#", icon: lDriverIcons[1]},
-          {name: "今日油价", link: "#", icon: lDriverIcons[2]},
-          {name: "小汽车摇号", link: "#", icon: lDriverIcons[3]},
-          {name: "停车场", link: "#", icon: lDriverIcons[4]},
-          {name: "尾号摇号", link: "#", icon: lDriverIcons[5]},
-          {name: "交通出行", link: "#", icon: lDriverIcons[6]},
-          {name: "公交自行车", link: "#", icon: lDriverIcons[7]},
-          {name: "加油站", link: "#", icon: lDriverIcons[8]},
+        lPolices: [
+          {name: "出入境证件办理", link: "#", icon: lPoliceIcons[0], desc: "出入境证件办理出入境证件办理"},
+          {name: "临时身份证办理", link: "#", icon: lPoliceIcons[1], desc: "出入境证件办理出入境证件办理"},
         ],
-        lMoneys: {
+        lChilds: {
           top: [
-            {name: "汇率查询", link: "#", icon: lMoneyIcons[0]},
-            {name: "黄金价格", link: "#", icon: lMoneyIcons[1]},
-            {name: "白银价格", link: "#", icon: lMoneyIcons[2]},
+            {name: "护士执业变更", link: "#", icon: lChildIcons[0]},
+            {name: "医疗机构审批", link: "#", icon: lChildIcons[1]},
           ],
           bottom: [
-            {name: "房税计算", link: "#", icon: lMoneyIcons[3]},
-            {name: "房贷计算", link: "#", icon: lMoneyIcons[4]},
-            {name: "车贷计算", link: "#", icon: lMoneyIcons[5]},
-            {name: "个税计算", link: "#", icon: lMoneyIcons[6]},
+            {name: "医疗机构变更", link: "#", icon: lChildIcons[2]},
+            {name: "医疗机构执业登记", link: "#", icon: lChildIcons[3]},
+            {name: "医疗执业注册", link: "#", icon: lChildIcons[4]},
           ]
         },
-        lLifes: [
-          {name: "天气预报", link: "#", icon: lLifeIcons[0]},
-          {name: "快递查询", link: "#", icon: lLifeIcons[1]},
-          {name: "电视节目", link: "#", icon: lLifeIcons[2]},
-          {name: "电脑维修", link: "#", icon: lLifeIcons[3]},
-          {name: "管道疏通", link: "#", icon: lLifeIcons[4]},
-          {name: "装饰装修", link: "#", icon: lLifeIcons[5]},
-          {name: "家电维修", link: "#", icon: lLifeIcons[6]},
-          {name: "搬家服务", link: "#", icon: lLifeIcons[7]},
+        lReds: [
+          {name: "筹资募捐", link: "#", icon: lRedIcons[0], desc: "汇聚人道力量，提高救助实力，用于灾害救助，助学，送温暖，募捐宣传和信息公开"},
+          {name: "大病救助", link: "#", icon: lRedIcons[1], desc: "面向年龄在18岁一下患有白血病，血友病，再生障碍性贫血，肾衰竭，恶性肿瘤等病症"},
+          {name: "特困救助", link: "#", icon: lRedIcons[2], desc: "面向本区户籍求助对象，提供人道救助办理程序，包括申请，受理，审核三部分"},
+          {name: "造血干细胞捐献", link: "#", icon: lRedIcons[3], desc: "动员各个组织和社区，招募造血干细胞支援捐献者，现场采集血样，保持与志愿者的联系"},
+          {name: "医疗救助程序", link: "#", icon: lRedIcons[4], desc: "面向本区户籍求助对象，提供医疗救助办理程序，包括申请，受理，审核三部分"},
+          {name: "实体服务资源", link: "#", icon: lRedIcons[5], desc: "面向社会组织、机关，提供救护知识培训，建立社区红十字会服务站，提供特色红十字社区服务"},
         ],
-        lHeaths: [
-          {
-            name: "重要大会", link: "#", icon: lHeathIcons[0]
-          },
-          {name: "食物热量", link: "#", icon: lHeathIcons[1]},
-          {name: "标准体重", link: "#", icon: lHeathIcons[2]},
+        lTraffics: [
+          {name: "运输开业许可", link: "#", icon: lTrafficIcons[0]},
+          {name: "运输经营许可", link: "#", icon: lTrafficIcons[1]},
         ]
       }
     },
-    components: {},
-    computed: {},
-    mounted () {
-    },
-    methods: {},
   }
 </script>
 
 <style lang="stylus" scoped>
-  .life-server
+  .col-lg-6, .col-md-6
+    padding 0
+
+  .Red-server
     width 100%
     background-color #ffffff
 
@@ -164,36 +152,45 @@
 
   .lpl-title
     line-height: 75px;
-    font-size: 18px
+    font-size: 14px
 
-  .l-pay
+  .l-People
     padding 50px
-    margin-top 50px
     li
       height 200px
       text-align center
       cursor pointer
       .icon
-        height 100px
+        height 70px
         transition height .2s
         &:hover
-          height 120px
+          height 80px
 
-  .l-driver
+  .l-Police
     background-color #e6f9e6
-    height 600px
+    height 450px
     padding 50px
     li
       text-align center
-      height 150px
+      height 300px
       cursor pointer
-      .icon
-        height 50px
-        transition height .2s
+      .lp-con
+        width 70%
+        height 250px
+        background-color #ffffff
+        padding-top 50px
+        margin auto
+        .icon
+          height 50px
+          transition height .2s
+        .lpl-title
+          line-height 35px
+        .lpl-desc
+          font-size 12px
         &:hover
-          height 70px
+          box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 10px
 
-  .l-money
+  .l-Child
     padding 50px
     margin-top 50px
     li
@@ -201,10 +198,10 @@
       text-align center
       cursor pointer
       .icon
-        height 50px
+        height 80px
         transition height .2s
         &:hover
-          height 70px
+          height 90px
 
   .bottom
     margin-top 80px
@@ -213,19 +210,29 @@
     background-color #e6f9e6
     padding 50px
     li
-      height 200px
+      height 100px
       text-align center
       cursor pointer
       .icon
-        height 150px
+        height 100px
         transition height .2s
-        &:hover
-          height 180px
+        background-color #ffffff
+        img
+          height 50px
+          margin-top 25px
       .title
+        text-align left
         line-height 50px
-        color #5dc65f
+        padding 0 10px
+        .lpt-name
+          color #60675f
+          font-weight bolder
+          line-height 35px
+        .lpt-desc
+          line-height 20px
+          font-size 12px
 
-  .l-heath
+  .l-Traffic
     padding 50px
     margin-top 50px
     margin-bottom 215px
@@ -233,6 +240,7 @@
       height 100px
       text-align center
       cursor pointer
+      padding 10px
       .icon
         border solid #979797 2px
         height 100px

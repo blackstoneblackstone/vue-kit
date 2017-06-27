@@ -42,13 +42,13 @@
     text-align center
     width 60%
     margin-left 20%
-    background-color #ffffff
-    border solid #f2f2f2 1px
     height 200px
     margin-top -90px
+    background url("../img/want_bg.png") no-repeat
+    background-size 100% 100%
     .w-title
-      height 50px
-      line-height 50px
+      height 70px
+      line-height 70px
       font-size 20px
     .w-conn
       height 150px

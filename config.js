@@ -9,7 +9,7 @@ module.exports = {
   cdn: {},
 
   devserver: {
-    port: 8090,
+    port: 8888,
     proxy: {},
     browserSync: {
       //是否使用browserSync自动刷新页面
@@ -17,9 +17,9 @@ module.exports = {
       conf: {
         host: "fangshan.com",
         open: "external",
-        port: 8080,
+        port: 9000,
         proxy: {
-          target: "fangshan.com:8090"
+          target: "fangshan.com:8888"
         }
       }
     }

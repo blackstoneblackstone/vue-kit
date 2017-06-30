@@ -4,6 +4,6 @@ module.exports = {
   output: {
     publicPath: '/'
   },
-  // devtool: 'source-map'
+  devtool: 'source-map'
 }
 

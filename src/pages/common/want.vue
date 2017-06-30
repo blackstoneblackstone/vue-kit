@@ -1,7 +1,5 @@
 <template lang="jade">
   .want.row
-    .w-title
-      |我要
     ul.row.w-conn
       li.col-lg-3.col-md-3.gray
         img(src="../../img/zixun_bg.png")
@@ -41,18 +39,15 @@
     margin-top -90px
     background url("../../img/want_bg.png") no-repeat
     background-size 100% 100%
-    .w-title
-      height 70px
-      line-height 70px
-      font-size 20px
     .w-conn
+      margin-top 50px
       height 150px
       vertical-align middle
       li
         background url("../../img/want_btn_bg.png") no-repeat center
         height 100px
         padding 20px
-        background-size 60% auto
+        background-size 60% 100%
         cursor pointer
         img
           width 35px

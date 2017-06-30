@@ -24,7 +24,6 @@
         navs: [
           {name: "首页", link: "#"},
           {name: "服务中心", link: "#"},
-          {name: "民生信用", link: "#"},
           {name: "爱房山", link: "#"},
           {name: "商家入口", link: "#"},
         ]

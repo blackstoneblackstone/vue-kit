@@ -189,7 +189,6 @@
 
   .l-money
     padding 50px
-    margin-top 50px
     li
       height 150px
       text-align center
@@ -221,7 +220,6 @@
 
   .l-heath
     padding 50px
-    margin-top 50px
     margin-bottom 215px
     li
       height 100px
